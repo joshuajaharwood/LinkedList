@@ -1,20 +1,18 @@
+import java.util.stream.IntStream;
+
 /**
  * Driver class for Linked List implementation.
  *
  * @author Joshua Harwood
- * @version 0.1
+ * @version 0.2
  */
 public class Main {
     public static void main(String[] args) {
+        LinkedList l = new LinkedList(0);
 
         // Construct some data to fill our linked list
-        int[] values = new int[10];
-        for (int i = 0; i < values.length; i++) {
-            values[i] = i;
-            System.out.println(i + ": " + values[i]);
-        }
+        IntStream.range(1, 20).forEach(l::append);
 
-        LinkedList l = new LinkedList(values[0]);
-        l.append(values[1]);
+        l.traverseList();
     }
 }
